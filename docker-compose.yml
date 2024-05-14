@@ -1,0 +1,14 @@
+name: google-refresh-token-generator
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bundle exec rackup --host 0.0.0.0 -p 4567
+    ports:
+      - "4567:4567"
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/app
